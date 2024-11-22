@@ -1,3 +1,4 @@
+/* Grundlegende Stile */
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +21,14 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.page-container {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 3em;
+}
+
 .nomark {
-    marker: none; /*No mark noch korrigieren*/
+    marker: none;
 }
 
 .landing {
@@ -89,6 +96,24 @@ body {
     width: 20em;
     height: 20em;
     border: 2px solid white;
+}
+
+.footer {
+    width: 100%;
+    padding: 1em;
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.github-logo img{
+    filter: invert(100%);
+    width: 3em;
+    height: auto;
 }
 
 @keyframes flyIn {
