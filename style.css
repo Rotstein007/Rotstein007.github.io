@@ -16,8 +16,31 @@
     font-weight: 700;
 }
 
-body {
+.bg {
     background: linear-gradient(135deg, rgba(34, 26, 26, 0.85), #9e3008);
+    position: fixed; /*Das hier muss ich noch ändern, damit der Hintergrund bis ganz nach unten an den Webseiten rand generiert wird*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(250px);
+    z-index: -1;
+}
+
+body {
+    /*background-color: #8f2e2e;*/
+    margin: 0;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -28,12 +51,74 @@ body {
 }
 
 .nomark {
-    marker: none;
+    user-select: none;
 }
 
 .landing {
     width: 100vw;
     height: 100vh;
+}
+
+.celement {
+    left: 50%;
+    top: 50%;
+    transition: 150ms;
+    position: absolute;
+    animation: celmAni 1000ms forwards ease-in-out;
+}
+
+#celement2 {
+    animation-delay: 100ms;
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg);
+}
+
+#celement3 {
+    animation-delay: 200ms;
+}
+
+#celement4 {
+    animation-delay: 300ms;
+}
+
+#celement5 {
+    animation-delay: 400ms;
+}
+
+#celement6 {
+    animation-delay: 500ms;
+}
+
+#celement7 {
+    animation-delay: 600ms;
+}
+
+#celement8 {
+    animation-delay: 700ms;
+}
+
+#celement1 {
+    animation-delay: 800ms;
+}
+
+@keyframes celmAni {
+    0% {
+        width: 1000px;
+        height: 1000px;
+    }
+
+    50% {
+        width: 1050px;
+        height: 1050px;
+    }
+
+    100% {
+        width: 1000px;
+        height: 1000px;
+    }
+}
+
+.celement:hover {
+    transform: scale(1.1);
 }
 
 .profile {
@@ -50,8 +135,8 @@ body {
 
 .profile-picture {
     border-radius: 50%;
-    width: 20em;
-    height: 20em;
+    width: 22em;
+    height: 22em;
     border: 2px solid white;
 }
 
@@ -65,17 +150,6 @@ body {
     color: #ff0000;
     font-size: 3em;
     font-weight: bold;
-}
-
-.arrow {
-    width: 4em;
-    height: 4em;
-    cursor: pointer;
-    position: absolute;
-    bottom: 0.4em;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bouncing 1.2s ease-in-out infinite alternate;
 }
 
 .content-block {
@@ -114,6 +188,7 @@ body {
     filter: invert(100%);
     width: 3em;
     height: auto;
+    margin-bottom: 0.5em;
 }
 
 @keyframes flyIn {

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1000" height="1000">
+    <defs>
+        <mask id="mask" x="0" y="0" width="500" height="500">
+            <rect width="1000" height="1000" fill="white"/>
+            <circle cx="500" cy="500" r="200" fill="black" />
+            <rect x="500" y="0" width="500" height="900" stroke="black" stroke-width="20"/>
+            <rect transform="rotate(45)" x="0" y="0" width="2000" height="2000" stroke="black" stroke-width="20"/>
+        </mask>
+    </defs>
+    <!-- Klickbarer Bereich im SVG -->
+    <a href="#" class="clickable-area" onclick="handleClick()">
+        <circle cx="500" cy="500" r="500" fill="white" mask="url(#mask)" />
+    </a>
+</svg>

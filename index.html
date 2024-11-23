@@ -6,22 +6,31 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="icon" href="img/web.svg" type="image/svg">
 </head>
 <body>
+
+<div class="bg"></div>
+
 <div class="landing">
     <div class="profile">
+        <img class="nomark celement" id="celement1" style="transform: translate(-50%, -50%) rotate(0deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement2" style="transform: translate(-50%, -50%) rotate(45deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement3" style="transform: translate(-50%, -50%) rotate(90deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement4" style="transform: translate(-50%, -50%) rotate(135deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement5" style="transform: translate(-50%, -50%) rotate(180deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement6" style="transform: translate(-50%, -50%) rotate(225deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement7" style="transform: translate(-50%, -50%) rotate(270deg);" src="img/c_elem.svg" alt="circle">
+        <img class="nomark celement" id="celement8" style="transform: translate(-50%, -50%) rotate(315deg);" src="img/c_elem.svg" alt="circle">
         <img src="img/pfp.png" alt="Profile Picture" class="profile-picture nomark">
-        <div class="profile-text">Rotstein</div>
-        <div class="profile-subtext">- Website under development -</div>
+        <!--<div class="profile-text">Rotstein</div>-->
+        <!--<div class="profile-subtext">- Website under development -</div>-->
     </div>
-    <a href="#content-section">
-        <img class="arrow nomark" src="img/arrow.png" alt="arrow">
-    </a>
 </div>
 
 <div class="content-section" id="content-section">
     <div class="content-block">
-        <img src="img/placeholder.png" alt="Image 1" class="content-image nomark">
+        <img src="img/web.svg" alt="Web" class="content-image nomark">
         <div class="content-text">
             <h2>Title 1</h2>
             <p>Some text content for the first block.</p>
@@ -43,13 +52,30 @@
             <p>Some text content for the third block.</p>
         </div>
     </div>
+    <hr>
+    <div class="content-block">
+        <div class="content-text">
+            <h2>Title 1</h2>
+            <p>Some text content for the first block.</p>
+        </div>
+        <img src="img/placeholder.png" alt="Image 1" class="content-image nomark">
+    </div>
+    <hr>
+    <div class="content-block">
+        <img src="img/placeholder.png" alt="Image 1" class="content-image nomark">
+        <div class="content-text">
+            <h2>Title 1</h2>
+            <p>Some text content for the first block.</p>
+        </div>
+    </div>
+    <hr>
 </div>
 
 <footer class="footer">
-    <a class="github-logo" href="https://github.com/rotstein007/megacraft" target="_blank">
+    <a class="github-logo nomark" href="https://github.com/rotstein007/" target="_blank">
         <img src="img/github.svg" alt="GitHub">
     </a>
-    <p>&copy; 2024 Rotstein - MIT Licence</p>
+    <p>Rotstein - MIT Licence 2024</p>
 </footer>
 
 </body>
