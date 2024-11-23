@@ -5,6 +5,32 @@
     box-sizing: border-box;
 }
 
+#mouse {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    aspect-ratio: 1;
+    background: #fff;
+    box-shadow: #f00 0 0 10px 5px, inset #f00 0 0 2px 1px;
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+@keyframes mouseAni {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
 @font-face {
     font-family: 'Ubuntu';
     src: url('fonts/Ubuntu-Regular.ttf') format('truetype');
@@ -42,6 +68,7 @@ body {
     /*background-color: #8f2e2e;*/
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
+    cursor: none;
 }
 
 .page-container {
@@ -60,6 +87,7 @@ body {
 }
 
 .celement {
+    translate: -50% -50%;
     left: 50%;
     top: 50%;
     transition: 150ms;
@@ -67,9 +95,16 @@ body {
     animation: celmAni 1000ms forwards ease-in-out;
 }
 
+.celement.hover {
+    scale: 1.05;
+}
+
+.celement.clicked {
+    scale: 1.1;
+}
+
 #celement2 {
     animation-delay: 100ms;
-    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(200deg);
 }
 
 #celement3 {
@@ -104,6 +139,7 @@ body {
     0% {
         width: 1000px;
         height: 1000px;
+        filter: none;
     }
 
     50% {
@@ -114,11 +150,27 @@ body {
     100% {
         width: 1000px;
         height: 1000px;
+        filter: invert(50%) sepia(100%) saturate(150%) hue-rotate(10deg);
     }
 }
-
-.celement:hover {
-    transform: scale(1.1);
+@keyframes profileAnim {
+    0% {
+        scale: 1;
+        rotate: 0;
+    }
+    25% {
+        rotate: -20deg;
+    }
+    50% {
+        scale: 1.05;
+    }
+    75% {
+        rotate: 20deg;
+    }
+    100% {
+        scale: 1;
+        rotate: 0;
+    }
 }
 
 .profile {
@@ -135,9 +187,10 @@ body {
 
 .profile-picture {
     border-radius: 50%;
-    width: 22em;
-    height: 22em;
-    border: 2px solid white;
+    width: 22.5em;
+    height: 22.5em;
+    animation: profileAnim 1500ms ease-in-out;
+    /*animation-delay: 800ms;*/
 }
 
 .profile-text {

@@ -7,8 +7,5 @@
             <rect transform="rotate(45)" x="0" y="0" width="2000" height="2000" stroke="black" stroke-width="20"/>
         </mask>
     </defs>
-    <!-- Klickbarer Bereich im SVG -->
-    <a href="#" class="clickable-area" onclick="handleClick()">
-        <circle cx="500" cy="500" r="500" fill="white" mask="url(#mask)" />
-    </a>
+    <circle cx="500" cy="500" r="500" fill="white" mask="url(#mask)" />
 </svg>
