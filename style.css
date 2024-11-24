@@ -205,9 +205,16 @@ body {
     font-weight: bold;
 }*/
 
+.content-section {
+    margin-left: 10em;
+    margin-right: 20em;
+}
+
 .content-block {
     display: grid;
     grid-template-columns: 50% 50%;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .content-text {
@@ -215,6 +222,12 @@ body {
     color: #ffffff;
     font-size: 1.5em;
     font-weight: bold;
+    border: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 1em;
+    margin: 2em;
+    background-color: rgba(181, 70, 25, 0.19);
 }
 
 .content-image {
@@ -223,6 +236,15 @@ body {
     width: 20em;
     height: 20em;
     border: 2px solid white;
+}
+
+.content-image2 {
+    margin: 2em;
+    border-radius: 50%;
+    width: 20em;
+    height: 20em;
+    border: 2px solid white;
+    float: right;
 }
 
 .footer {
