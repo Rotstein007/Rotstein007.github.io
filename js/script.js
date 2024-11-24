@@ -17,25 +17,25 @@
 // });
 
 
-(() => {
-    const mouse = document.querySelector("#mouse")
-    let lastX = 0
-    let lastY = 0
-    function onMouseUpdate(event){
-        if(event){
-            lastX = event.x
-            lastY = event.y
-        }
-        mouse.style.left = `${lastX}px`;
-        mouse.style.top = `${lastY + window.scrollY}px`;
-    }
-    document.addEventListener("mousemove", onMouseUpdate);
-    document.addEventListener("scroll", () => onMouseUpdate())
-
-    document.addEventListener("click", event => {
-        mouse.style.animation = "mouseAni 300ms";
-        setTimeout(() => {
-            mouse.style.animation = "";
-        }, 300);
-    })
-})()
+// (() => {
+//     const mouse = document.querySelector("#mouse")
+//     let lastX = 0
+//     let lastY = 0
+//     function onMouseUpdate(event){
+//         if(event){
+//             lastX = event.x
+//             lastY = event.y
+//         }
+//         mouse.style.left = `${lastX}px`;
+//         mouse.style.top = `${lastY + window.scrollY}px`;
+//     }
+//     document.addEventListener("mousemove", onMouseUpdate);
+//     document.addEventListener("scroll", () => onMouseUpdate())
+//
+//     document.addEventListener("click", event => {
+//         mouse.style.animation = "mouseAni 300ms";
+//         setTimeout(() => {
+//             mouse.style.animation = "";
+//         }, 300);
+//     })
+// })()

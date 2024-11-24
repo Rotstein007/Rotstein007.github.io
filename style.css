@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-#mouse {
+/*#mouse {
     position: absolute;
     transform: translate(-50%, -50%);
     width: 10px;
@@ -29,7 +29,7 @@
     100% {
         scale: 1;
     }
-}
+}*/
 
 @font-face {
     font-family: 'Ubuntu';
@@ -68,7 +68,7 @@ body {
     /*background-color: #8f2e2e;*/
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
-    cursor: none;
+    /*cursor: none;*/
 }
 
 .page-container {
@@ -139,7 +139,7 @@ body {
     0% {
         width: 1000px;
         height: 1000px;
-        filter: none;
+        /*filter: invert(50%) sepia(100%) saturate(150%) hue-rotate(10deg);*/ /*Komischer effekt, weil das ist am Anfang immer noch weiß aber es ist nicht mehr so smooth im Übergang.*/
     }
 
     50% {
@@ -193,7 +193,7 @@ body {
     /*animation-delay: 800ms;*/
 }
 
-.profile-text {
+/*.profile-text {
     color: #ffffff;
     font-size: 5em;
     font-weight: bold;
@@ -203,7 +203,7 @@ body {
     color: #ff0000;
     font-size: 3em;
     font-weight: bold;
-}
+}*/
 
 .content-block {
     display: grid;
