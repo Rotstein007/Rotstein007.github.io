@@ -1,8 +1,13 @@
+/**
+ * Handles mobile-specific logic (scroll animations, sticky header)
+ */
+"use strict";
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* 1. SCROLL ANIMATIONEN (Fade In Up) */
+    /* --- Scroll Animations (Fade In) --- */
     const observerOptions = {
-        threshold: 0.15 // Startet wenn 15% des Elements sichtbar sind
+        threshold: 0.15 // Trigger when 15% visible
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
@@ -13,18 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    // Alle Content-Blöcke beobachten
+    // Observe all elements with .scroll-animate class
     const scrollElements = document.querySelectorAll('.scroll-animate');
     scrollElements.forEach(el => scrollObserver.observe(el));
 
 
-    /* 2. STICKY HEADER LOGIK */
+    /* --- Sticky Header Logic --- */
     const header = document.getElementById('mobile-header');
     const introSection = document.querySelector('.landing');
 
     if (header && introSection) {
         window.addEventListener('scroll', () => {
-            // Wenn man über die Landing-Page hinaus scrollt, Header zeigen
+            // Show header when scrolled past 80% of the landing section
             const triggerHeight = introSection.offsetHeight * 0.8;
 
             if (window.scrollY > triggerHeight) {

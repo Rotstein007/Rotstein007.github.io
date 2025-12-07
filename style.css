@@ -97,54 +97,54 @@ body::-webkit-scrollbar-thumb:hover { background: #ffcccc; }
 }
 
 /* --- Circle Elements (Container) --- */
+/* This container holds both the image and the text */
 .celement {
     left: 50%; top: 50%;
     position: absolute;
     width: 1000px; height: 1000px;
 
-    /* Rotation des gesamten Segments */
+    /* Rotation of the segment */
     transform: translate(-50%, -50%) rotate(var(--r)) scale(1);
 
-    /* Animationen */
+    /* Animation config */
     transition: transform 0.2s ease-out, filter 0.2s ease-out;
     animation: gentleFadeIn 1.5s ease-out forwards;
     opacity: 0;
 
-    /* Flexbox zur Zentrierung des Inhalts */
+    /* Flexbox for centering */
     display: flex;
-    justify-content: center; /* Horizontal mittig im rotierten Container */
-    align-items: flex-start; /* Inhalt beginnt oben */
+    justify-content: center;
+    align-items: flex-start;
 
     pointer-events: none;
 }
 
-/* Das rote Hintergrundbild */
+/* The red background slice */
 .slice-bg {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: 1;
-    /* Farbe: Warmes Weiß/Rot Gemisch */
+    /* Color: Warm White/Red mix */
     filter: brightness(0) invert(1) opacity(0.6) drop-shadow(0 0 5px rgba(255,0,0,0.2));
     transition: filter 0.2s ease-out;
 }
 
-/* Der Text-Container (Der Ankerpunkt) */
+/* Text Container (Anchor Point) */
 .slice-content {
     position: absolute;
     z-index: 2;
 
-    /* Wir starten im absoluten Zentrum */
+    /* Start at absolute center */
     top: 50%;
     left: 50%;
 
-    /* PRESERVED USER POSITIONING */
+    /* Radius and Position adjustment as requested */
     transform: translate(-120%, -50%) translateY(-350px);
 
     width: 200px;
     height: 40px;
 
-    /* Flexbox sorgt dafür, dass wir vom Zentrum dieses Punktes ausgehen */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,11 +152,10 @@ body::-webkit-scrollbar-thumb:hover { background: #ffcccc; }
     pointer-events: none;
 }
 
-/* Der eigentliche Text */
+/* The actual text styling */
 .slice-text {
     white-space: nowrap;
 
-    /* Styling */
     font-family: 'TechMono', monospace;
     font-size: 1.4em;
     font-weight: 900;
@@ -165,42 +164,25 @@ body::-webkit-scrollbar-thumb:hover { background: #ffcccc; }
     letter-spacing: 2px;
     rotate: -25deg;
 
-    /* 2. FEIN-TUNING: Preserve User Logic */
+    /* Final Position Tuning */
     transform: rotate(-90deg) translate(0px, 0px);
 
     opacity: 0.65;
     transition: opacity 0.2s ease-out, color 0.2s;
-    /* Removed letter-spacing transition to prevent wobble on hover */
+    /* No letter-spacing transition to prevent wobbling */
 }
 
-/* Keyframes für die Start-Animation */
-@keyframes gentleFadeIn {
-    0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(0.9); }
-    100% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); }
-}
-
-/* Delays für den Fächer-Effekt */
-#celement1 { animation-delay: 0.1s; }
-#celement2 { animation-delay: 0.2s; }
-#celement3 { animation-delay: 0.3s; }
-#celement4 { animation-delay: 0.4s; }
-#celement5 { animation-delay: 0.5s; }
-#celement6 { animation-delay: 0.6s; }
-#celement7 { animation-delay: 0.7s; }
-#celement8 { animation-delay: 0.8s; }
-
-/* HOVER STATUS */
+/* Hover Effects */
 .celement.hover {
     transform: translate(-50%, -50%) rotate(var(--r)) scale(1.06) !important;
     z-index: 10;
 }
 
-/* Hover-Effekt auf das Hintergrundbild (Warm Glow) */
+/* Warm glow on hover */
 .celement.hover .slice-bg {
     filter: brightness(0) invert(1) opacity(0.8) sepia(0.4) saturate(2) drop-shadow(0 0 15px rgba(255, 200, 200, 0.8));
 }
 
-/* Hover-Effekt auf den Text */
 .celement.hover .slice-text {
     opacity: 1;
     color: #330000;
@@ -209,6 +191,22 @@ body::-webkit-scrollbar-thumb:hover { background: #ffcccc; }
 .celement.clicked {
     transform: translate(-50%, -50%) rotate(var(--r)) scale(1.08) !important;
 }
+
+/* --- Start Animation Keyframes --- */
+@keyframes gentleFadeIn {
+    0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(0.9); }
+    100% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); }
+}
+
+/* Delays */
+#celement1 { animation-delay: 0.1s; }
+#celement2 { animation-delay: 0.2s; }
+#celement3 { animation-delay: 0.3s; }
+#celement4 { animation-delay: 0.4s; }
+#celement5 { animation-delay: 0.5s; }
+#celement6 { animation-delay: 0.6s; }
+#celement7 { animation-delay: 0.7s; }
+#celement8 { animation-delay: 0.8s; }
 
 /* --- Profile Picture --- */
 .profile-picture {
