@@ -3,96 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile Page</title>
+    <meta name="description" content="Portfolio of Rotstein - Fullstack Developer & Designer">
+    <title>Rotstein | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+
     <script src="js/script.js" defer></script>
-    <script src="js/profile-navigation.js" type="application/javascript" defer></script>
+    <script src="js/profile-navigation.js" defer></script>
+    <script src="js/mobile.js" defer></script>
+
     <link rel="icon" href="img/web.svg" type="image/svg">
 </head>
 <body>
 
 <div class="bg"></div>
 
-<div id="mouse"></div>
+<header id="mobile-header" class="mobile-header">
+    <span class="header-title">Rotstein_Dev</span>
+</header>
 
-<div class="landing">
-    <div class="profile">
-        <img class="nomark celement" id="celement1" style="transform: rotate(0deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement2" style="transform: rotate(45deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement3" style="transform: rotate(90deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement4" style="transform: rotate(135deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement5" style="transform: rotate(180deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement6" style="transform: rotate(225deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement7" style="transform: rotate(270deg);" src="img/c_elem.svg" alt="circle">
-        <img class="nomark celement" id="celement8" style="transform: rotate(315deg);" src="img/c_elem.svg" alt="circle">
-        <img src="img/pfp.png" alt="Profile Picture" class="profile-picture nomark">
-        <!--<div class="profile-text">Rotstein</div>-->
-        <!--<div class="profile-subtext">- Website under development -</div>-->
+<main class="landing">
+
+    <div class="profile-container-desktop">
+        <div class="profile-visuals">
+
+            <div class="nomark celement" id="celement1" style="--r: 0deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">Über Mich</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement2" style="--r: 45deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">Erfahrung</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement3" style="--r: 90deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">Projekte</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement4" style="--r: 135deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">...</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement5" style="--r: 180deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">Skills</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement6" style="--r: 225deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">...</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement7" style="--r: 270deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">...</span></div>
+            </div>
+
+            <div class="nomark celement" id="celement8" style="--r: 315deg;">
+                <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
+                <div class="slice-content"><span class="slice-text">Socials</span></div>
+            </div>
+
+            <img src="img/pfp.png" alt="Profile Picture" class="profile-picture nomark">
+        </div>
+
+        <img src="img/empty.svg" usemap="#selection" class="overlay-map nomark" alt="Navigation Map">
+        <map name="selection" class="nomark">
+            <area href="#about" alt="About" data-target="#about" coords="366,352,152,138,166,127,177,117,189,106,201,97,216,87,228,78,242,69,258,60,274,53,288,46,300,39,314,34,329,27,341,23,355,18,371,12,385,9,398,5,410,4,424,2,445,0,465,0,489,0,491,300,466,302,445,307,426,314,410,322,394,330,380,341" shape="poly">
+            <area href="#experience" alt="Experience" data-target="#experience" coords="510,0,510,299,528,301,544,305,556,308,568,312,579,316,589,320,599,326,608,331,618,338,627,344,635,351,846,139,826,121,808,106,788,90,773,80,754,69,733,57,717,49,701,42,681,33,662,27,641,19,617,13,589,7,561,3,535,1" shape="poly">
+            <area href="#projects" alt="Projects" data-target="#projects" coords="648,365,860,153,869,162,877,173,886,182,895,194,902,203,911,214,923,232,934,246,945,269,961,305,973,335,984,371,993,406,996,429,999,467,1000,490,700,491,698,473,695,457,691,441,685,425,678,409,669,394,659,380,654,373" shape="poly">
+            <area href="#portfolio" alt="Portfolio" data-target="#portfolio" coords="699,509,1000,511,1000,527,1000,542,997,556,996,568,995,581,991,593,989,606,986,619,982,633,979,647,974,661,970,674,965,686,959,699,953,711,946,725,939,739,931,752,923,767,914,781,906,794,895,807,884,820,874,831,860,845,648,634,658,621,667,609,676,595,682,583,688,570,692,555,695,541,699,523" shape="poly">
+            <area href="#skills" alt="Skills" data-target="#skills" coords="634,649,846,860,830,875,816,887,800,899,784,912,767,924,747,935,730,943,712,952,693,961,671,970,652,977,631,982,610,988,588,993,565,996,542,1000,511,1000,509,700,521,698,535,698,548,694,560,691,574,686,587,680,601,673,610,668,620,661" shape="poly">
+            <area href="#coding" alt="Coding" data-target="#coding" coords="364,648,373,655,383,663,392,670,403,675,413,680,426,686,438,689,449,694,461,696,472,698,482,698,491,700,489,998,475,998,461,998,445,996,431,995,417,993,405,991,390,988,376,984,360,981,345,975,329,970,314,965,299,959,284,952,269,943,254,936,244,929,231,922,217,913,203,903,191,894,180,885,168,876,154,862" shape="poly">
+            <area href="#contact" alt="Kontakt" data-target="#contact" coords="352,634,138,848,129,837,120,827,111,814,101,802,92,790,83,777,74,765,67,753,58,737,49,719,42,703,35,689,28,671,23,654,18,636,12,618,9,601,5,583,4,567,2,549,0,534,2,511,300,511,302,527,306,539,309,555,313,567,316,581,323,595,330,608,339,620" shape="poly">
+            <area href="#socials" alt="Socials" data-target="#socials" coords="300,489,0,489,0,472,2,454,4,438,5,422,7,408,11,394,14,378,19,362,23,346,27,332,34,316,39,302,44,292,51,277,58,263,65,253,72,239,81,224,90,212,99,201,106,191,113,180,122,171,129,163,140,152,353,366,343,376,336,387,327,398,322,408,316,419,313,429,307,443,304,458,302,473" shape="poly">
+        </map>
     </div>
 
-    <img src="img/empty.svg" usemap="#selection" class="profile nomark" alt="">
-    
-    <map name="selection" class="nomark">
-        <area alt="" data-target="#content-section" coords="366,352,152,138,166,127,177,117,189,106,201,97,216,87,228,78,242,69,258,60,274,53,288,46,300,39,314,34,329,27,341,23,355,18,371,12,385,9,398,5,410,4,424,2,445,0,465,0,489,0,491,300,466,302,445,307,426,314,410,322,394,330,380,341" shape="poly">
-        <area alt="" data-target="#content-section" coords="510,0,510,299,528,301,544,305,556,308,568,312,579,316,589,320,599,326,608,331,618,338,627,344,635,351,846,139,826,121,808,106,788,90,773,80,754,69,733,57,717,49,701,42,681,33,662,27,641,19,617,13,589,7,561,3,535,1" shape="poly">
-        <area alt="" data-target="#content-section" coords="648,365,860,153,869,162,877,173,886,182,895,194,902,203,911,214,923,232,934,246,945,269,961,305,973,335,984,371,993,406,996,429,999,467,1000,490,700,491,698,473,695,457,691,441,685,425,678,409,669,394,659,380,654,373" shape="poly">
-        <area alt="" data-target="#content-section" coords="699,509,1000,511,1000,527,1000,542,997,556,996,568,995,581,991,593,989,606,986,619,982,633,979,647,974,661,970,674,965,686,959,699,953,711,946,725,939,739,931,752,923,767,914,781,906,794,895,807,884,820,874,831,860,845,648,634,658,621,667,609,676,595,682,583,688,570,692,555,695,541,699,523" shape="poly">
-        <area alt="" data-target="#content-section" coords="634,649,846,860,830,875,816,887,800,899,784,912,767,924,747,935,730,943,712,952,693,961,671,970,652,977,631,982,610,988,588,993,565,996,542,1000,511,1000,509,700,521,698,535,698,548,694,560,691,574,686,587,680,601,673,610,668,620,661" shape="poly">
-        <area alt="" data-target="#content-section" coords="364,648,373,655,383,663,392,670,403,675,413,680,426,686,438,689,449,694,461,696,472,698,482,698,491,700,489,998,475,998,461,998,445,996,431,995,417,993,405,991,390,988,376,984,360,981,345,975,329,970,314,965,299,959,284,952,269,943,254,936,244,929,231,922,217,913,203,903,191,894,180,885,168,876,154,862" shape="poly">
-        <area alt="" data-target="#content-section" coords="352,634,138,848,129,837,120,827,111,814,101,802,92,790,83,777,74,765,67,753,58,737,49,719,42,703,35,689,28,671,23,654,18,636,12,618,9,601,5,583,4,567,2,549,0,534,2,511,300,511,302,527,306,539,309,555,313,567,316,581,323,595,330,608,339,620" shape="poly">
-        <area alt="" data-target="#content-section" coords="300,489,0,489,0,472,2,454,4,438,5,422,7,408,11,394,14,378,19,362,23,346,27,332,34,316,39,302,44,292,51,277,58,263,65,253,72,239,81,224,90,212,99,201,106,191,113,180,122,171,129,163,140,152,353,366,343,376,336,387,327,398,322,408,316,419,313,429,307,443,304,458,302,473" shape="poly">
-    </map>
+    <div class="mobile-nav">
+        <div class="mobile-intro">
+            <div class="mobile-pfp-container">
+                <img src="img/pfp.png" alt="Profile Picture" class="mobile-pfp">
+            </div>
+            <div class="mobile-text">
+                <h1>Rotstein</h1>
+            </div>
+        </div>
 
-</div>
+        <nav class="mobile-links-list">
+            <a href="#about" class="pro-btn">
+                <span><span class="btn-decor">&lt;</span>Über mich<span class="btn-decor">/&gt;</span></span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#experience" class="pro-btn">
+                <span><span class="btn-decor">[</span>Erfahrung<span class="btn-decor">]</span></span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#projects" class="pro-btn">
+                <span><span class="btn-decor">{</span>Projekte<span class="btn-decor">}</span></span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#portfolio" class="pro-btn">
+                <span><span class="btn-decor">#</span>...</span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#skills" class="pro-btn">
+                <span><span class="btn-decor">*</span>Skills</span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#coding" class="pro-btn">
+                <span><span class="btn-decor">/></span>...</span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#contact" class="pro-btn">
+                <span><span class="btn-decor">@</span>...</span><span class="btn-arrow">➜</span>
+            </a>
+            <a href="#socials" class="pro-btn">
+                <span><span class="btn-decor">~</span>Socials</span><span class="btn-arrow">➜</span>
+            </a>
+        </nav>
+    </div>
+</main>
 
-<div class="content-section" id="content-section">
-    <div class="content-block">
-        <img src="img/web.svg" alt="Web" class="content-image2 nomark">
+<section class="content-section">
+
+    <article id="about" class="content-block scroll-animate">
+        <img src="img/web.svg" alt="About" class="content-image nomark">
         <div class="content-text">
-            <h2>Lorem Ipsum</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2>Über Mich</h2>
+            <p>Hey, ich bin Informatikstudent im 5. Semester. Mich fasziniert Technologie in all ihren Facetten und ich begeistere mich schnell für neue Themengebiete.</p>
         </div>
-    </div>
-    <!--<hr>-->
-    <div class="content-block">
+    </article>
+
+    <article id="experience" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Experience" class="content-image nomark">
         <div class="content-text">
-            <h2>Lorem Ipsum</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2>Erfahrung</h2>
+            <p>Meine Praxiserfahrung stammt vor allem aus leidenschaftlichen Freizeitprojekten. Dabei habe ich mir verschiedenste Programmiersprachen und technische Lösungsansätze eigenständig angeeignet.</p>
         </div>
-        <img src="img/placeholder.png" alt="Image 2" class="content-image nomark">
-    </div>
-    <!--<hr>-->
-    <div class="content-block">
-        <img src="img/placeholder.png" alt="Image 3" class="content-image2 nomark">
+    </article>
+
+    <article id="projects" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Projects" class="content-image nomark">
         <div class="content-text">
-            <h2>Lorem Ipsum</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2>Projekte</h2>
+            <p>Auf GitHub findest du eine Auswahl meiner Projekte – manche entstanden spontan, andere durch lange Planung. Meist entwickle ich Softwarelösungen für Probleme, für die ich keine zufriedenstellenden existierenden Tools finden konnte.</p>
         </div>
-    </div>
-    <!--<hr>-->
-    <div class="content-block">
+    </article>
+
+    <article id="portfolio" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Portfolio" class="content-image nomark">
         <div class="content-text">
-            <h2>Lorem Ipsum</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2>...</h2>
+            <p>...</p>
         </div>
-        <img src="img/placeholder.png" alt="Image 1" class="content-image nomark">
-    </div>
-    <!--<hr>-->
-    <div class="content-block">
-        <img src="img/placeholder.png" alt="Image 1" class="content-image2 nomark">
+    </article>
+
+    <article id="skills" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Skills" class="content-image nomark">
         <div class="content-text">
-            <h2>Lorem Ipsum</h2>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <h2>Skills</h2>
+            <p>Im Studium habe ich Python, C++, JavaScript und PHP gelernt, mit einer Vertiefung in Java über zwei Module. Ich bin routiniert im Umgang mit Git sowie gängigen IDEs wie Visual Studio Code und der JetBrains-Suite. Zudem bin ich überzeugter Linux-Nutzer: Seit 2015 privat im Einsatz, habe ich 2019 Windows komplett den Rücken gekehrt.</p>
         </div>
-    </div>
-    <!--<hr>-->
-</div>
+    </article>
+
+    <article id="coding" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Coding" class="content-image nomark">
+        <div class="content-text">
+            <h2>...</h2>
+            <p>...</p>
+        </div>
+    </article>
+
+    <article id="contact" class="content-block scroll-animate">
+        <img src="img/placeholder.png" alt="Contact" class="content-image nomark">
+        <div class="content-text">
+            <h2>...</h2>
+            <p>...</p>
+        </div>
+    </article>
+
+    <article id="socials" class="content-block scroll-animate">
+        <img src="img/web.svg" alt="Socials" class="content-image nomark">
+        <div class="content-text">
+            <h2>Social media</h2>
+            <p>Ich betreibe einen <a href="https://www.youtube.com/@Rotstein" target="_blank" style="color: #fff; font-weight: bold; text-decoration: underline;">YouTube Kanal</a>, auf welchem ich ab und zu Tutorials zu unterschiedlichen Thematiken veröffentliche.</p>
+        </div>
+    </article>
+
+</section>
 
 <footer class="footer">
     <a class="github-logo nomark" href="https://github.com/rotstein007/" target="_blank">
         <img src="img/github.svg" alt="GitHub">
     </a>
-    <p>Rotstein - MIT Licence 2024</p>
+    <p class="footer-text">
+        <a class="repo-link" href="https://github.com/rotstein007/Rotstein007.github.io" target="_blank">Source Code</a>
+    </p>
+    <p class="footer-copy">Rotstein - MIT Licence 2024</p>
 </footer>
 
 </body>
