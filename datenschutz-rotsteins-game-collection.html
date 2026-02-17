@@ -9,8 +9,22 @@
     <link rel="icon" href="img/web.svg" type="image/svg">
 
     <style>
-        .policy-container { margin: 0 auto; max-width: 1100px; }
-        .policy-meta { opacity: 0.85; font-size: 0.95em; margin-top: 0.5em; }
+        .policy-page { max-width: 900px; margin: 0 auto; padding: 5.5rem 1.5rem 3.5rem; }
+        .policy-header { display: flex; flex-direction: column; gap: 0.5rem; }
+        .policy-title { font-size: 2.4rem; letter-spacing: -1px; }
+        .policy-meta { opacity: 0.85; font-size: 0.95em; }
+        .policy-back {
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'TechMono', monospace;
+            font-weight: bold;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+        }
+        .policy-back:hover { border-bottom-style: solid; }
         .policy-nav { margin-top: 1.25em; display: flex; gap: 0.75em; flex-wrap: wrap; }
         .policy-nav a {
             color: #fff;
@@ -20,112 +34,133 @@
             border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
         }
         .policy-nav a:hover { border-bottom-style: solid; }
-        .policy h3 { margin-top: 1.2em; margin-bottom: 0.35em; color: #ffeaea; }
-        .policy p { margin-top: 0.65em; }
-        .policy ul { margin-top: 0.65em; padding-left: 1.25em; }
-        .policy li { margin: 0.35em 0; }
-        .policy a { color: #fff; text-decoration: underline; }
-        .policy a:hover { opacity: 0.9; }
+        .policy-section {
+            margin-top: 2.2rem;
+            padding: 1.5rem 1.75rem;
+            background: rgba(180, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .policy-section h3 { margin-bottom: 0.35em; color: #ffeaea; }
+        .policy-section p { margin-top: 0.65em; }
+        .policy-section ul { margin-top: 0.65em; padding-left: 1.25em; }
+        .policy-section li { margin: 0.35em 0; }
+        .policy-section a { color: #fff; text-decoration: underline; }
+        .policy-section a:hover { opacity: 0.9; }
+        .policy-footer { margin-top: 2.5rem; text-align: center; opacity: 0.8; }
         code { font-family: 'TechMono', monospace; }
+
+        @media (max-width: 700px) {
+            .policy-page { padding: 4.5rem 1.25rem 3rem; }
+            .policy-title { font-size: 2rem; }
+            .policy-section { padding: 1.25rem 1.35rem; }
+        }
     </style>
 </head>
 <body>
 
 <div class="bg"></div>
 
-<section class="content-section policy-container">
-    <article class="content-block policy" style="flex-direction: row;">
-        <img src="img/web.svg" alt="Datenschutz" class="content-image nomark">
-        <div class="content-text">
-            <h2>Datenschutzerklärung für Rotsteins Game Collection</h2>
-            <div class="policy-meta">Datum der letzten Aktualisierung: 17. Dezember 2025</div>
+<main class="policy-page">
+    <header class="policy-header">
+        <a class="policy-back" href="index.html">← Zurück</a>
+        <h1 class="policy-title">Datenschutzerklärung für Rotsteins Game Collection</h1>
+        <div class="policy-meta">Datum der letzten Aktualisierung: 17. Februar 2026</div>
+        <nav class="policy-nav">
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
 
-            <div class="policy-nav">
-                <a href="index.html">Zurück zur Startseite</a>
-                <a href="#kontakt">Kontakt</a>
-            </div>
+    <section class="policy-section">
+        <p>
+            Diese Datenschutzerklärung beschreibt, wie im Zusammenhang mit der Nutzung des Spiels
+            <strong>Rotsteins Game Collection</strong> Daten verarbeitet werden. Indem du das Spiel
+            installierst und nutzt, stimmst du der Verarbeitung deiner Daten gemäß dieser Erklärung zu.
+        </p>
+    </section>
 
-            <p>
-                Diese Datenschutzerklärung beschreibt, wie im Zusammenhang mit der Nutzung des Spiels
-                <strong>Rotsteins Game Collection</strong> Daten verarbeitet werden. Indem du das Spiel
-                installierst und nutzt, stimmst du der Verarbeitung deiner Daten gemäß dieser Erklärung zu.
-            </p>
+    <section class="policy-section">
+        <h3>1. Verantwortlicher</h3>
+        <p>
+            Verantwortlich für die Datenverarbeitung:
+            <strong>Rotstein</strong><br>
+            Kontakt: <a href="mailto:info@rotstein.dev">info@rotstein.dev</a>
+        </p>
+    </section>
 
-            <h3>1. Verantwortlicher</h3>
-            <p>
-                Verantwortlich für die Datenverarbeitung:
-                <strong>Rotstein</strong><br>
-                Kontakt: <a href="mailto:info@rotstein.dev">info@rotstein.dev</a>
-            </p>
+    <section class="policy-section">
+        <h3>2. Erhebung und Nutzung von Daten</h3>
+        <ul>
+            <li>
+                <strong>Google Play / Google Play Spiele-Dienste:</strong>
+                Ich nutze Google-Dienste, um Spielstände zu speichern und Erfolge (Achievements) zu synchronisieren.
+                Dadurch kannst du auf mehreren Geräten weiterspielen, sofern du mit deinem Google-Konto angemeldet bist.
+            </li>
+            <li>
+                <strong>Bluetooth:</strong>
+                Das Spiel kann auf Bluetooth zugreifen, um Funktionen zu ermöglichen, die eine lokale Verbindung zu
+                anderen Geräten erfordern (z. B. Kommunikation/Verbindung innerhalb der App).
+                Bluetooth wird nur verwendet, wenn du entsprechende Funktionen nutzt.
+            </li>
+        </ul>
+    </section>
 
-            <h3>2. Erhebung und Nutzung von Daten</h3>
-            <ul>
-                <li>
-                    <strong>Google Play / Google Play Spiele-Dienste:</strong>
-                    Wir nutzen Google-Dienste, um Spielstände zu speichern und Erfolge (Achievements) zu synchronisieren.
-                    Dadurch kannst du auf mehreren Geräten weiterspielen, sofern du mit deinem Google-Konto angemeldet bist.
-                </li>
-                <li>
-                    <strong>Bluetooth:</strong>
-                    Das Spiel kann auf Bluetooth zugreifen, um Funktionen zu ermöglichen, die eine lokale Verbindung zu
-                    anderen Geräten erfordern (z. B. Kommunikation/Verbindung innerhalb der App).
-                    Bluetooth wird nur verwendet, wenn du entsprechende Funktionen nutzt.
-                </li>
-            </ul>
+    <section class="policy-section">
+        <h3>3. Welche Daten werden erfasst?</h3>
+        <ul>
+            <li>
+                <strong>Spielerdaten:</strong>
+                Gespeicherte Spielstände und Erfolge, die im Rahmen der Google Play/Play-Spiele-Funktionalität
+                mit deinem Google-Konto verknüpft sein können (z. B. Profil-/Spielerkennung innerhalb der Google-Dienste).
+            </li>
+            <li>
+                <strong>Bluetooth-Daten:</strong>
+                Informationen, die zur Herstellung und Verwaltung einer Bluetooth-Verbindung erforderlich sind
+                (z. B. Verbindungsstatus und ggf. Geräteinformationen).
+            </li>
+        </ul>
+    </section>
 
-            <h3>3. Welche Daten werden erfasst?</h3>
-            <ul>
-                <li>
-                    <strong>Spielerdaten:</strong>
-                    Gespeicherte Spielstände und Erfolge, die im Rahmen der Google Play/Play-Spiele-Funktionalität
-                    mit deinem Google-Konto verknüpft sein können (z. B. Profil-/Spielerkennung innerhalb der Google-Dienste).
-                </li>
-                <li>
-                    <strong>Bluetooth-Daten:</strong>
-                    Informationen, die zur Herstellung und Verwaltung einer Bluetooth-Verbindung erforderlich sind
-                    (z. B. Verbindungsstatus und ggf. Geräteinformationen).
-                </li>
-            </ul>
+    <section class="policy-section">
+        <h3>4. Weitergabe von Daten</h3>
+        <p>
+            Ich gebe keine personenbezogenen Daten an Dritte weiter, außer wenn dies für die Nutzung der oben genannten
+            Google-Dienste erforderlich ist oder wenn ich gesetzlich dazu verpflichtet bin.
+        </p>
+        <p>
+            Weitere Informationen zur Datenverarbeitung durch Google findest du in der Datenschutzerklärung von Google:
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
+        </p>
+    </section>
 
-            <h3>4. Weitergabe von Daten</h3>
-            <p>
-                Wir geben keine personenbezogenen Daten an Dritte weiter, außer wenn dies für die Nutzung der oben genannten
-                Google-Dienste erforderlich ist oder wenn wir gesetzlich dazu verpflichtet sind.
-            </p>
-            <p>
-                Weitere Informationen zur Datenverarbeitung durch Google findest du in der Datenschutzerklärung von Google:
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
-            </p>
+    <section class="policy-section">
+        <h3>5. Sicherheit</h3>
+        <p>
+            Ich nehme die Sicherheit deiner Daten ernst und setze geeignete technische und organisatorische Maßnahmen ein,
+            um Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.
+        </p>
+    </section>
 
-            <h3>5. Sicherheit</h3>
-            <p>
-                Wir nehmen die Sicherheit deiner Daten ernst und setzen geeignete technische und organisatorische Maßnahmen ein,
-                um Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.
-            </p>
+    <section class="policy-section">
+        <h3>6. Änderungen dieser Datenschutzerklärung</h3>
+        <p>
+            Ich behalte mir das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Die jeweils aktuelle Version wird
+            auf dieser Seite veröffentlicht. Das Datum der letzten Aktualisierung findest du oben.
+        </p>
+    </section>
 
-            <h3>6. Änderungen dieser Datenschutzerklärung</h3>
-            <p>
-                Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Die jeweils aktuelle Version wird
-                auf dieser Seite veröffentlicht. Das Datum der letzten Aktualisierung findest du oben.
-            </p>
+    <section class="policy-section" id="kontakt">
+        <h3>7. Kontakt</h3>
+        <p>
+            Wenn du Fragen oder Bedenken bezüglich dieser Datenschutzerklärung hast, kontaktiere mich bitte unter:
+            <a href="mailto:info@rotstein.dev">info@rotstein.dev</a>
+        </p>
+    </section>
 
-            <h3 id="kontakt">7. Kontakt</h3>
-            <p>
-                Wenn du Fragen oder Bedenken bezüglich dieser Datenschutzerklärung hast, kontaktiere uns bitte unter:
-                <a href="mailto:info@rotstein.dev">info@rotstein.dev</a>
-            </p>
-        </div>
-    </article>
-</section>
-
-<footer class="footer">
-    <p class="footer-text">
-        <a class="repo-link" href="index.html">Startseite</a>
-        &nbsp;·&nbsp;
-        <a class="repo-link" href="https://github.com/rotstein007/Rotstein007.github.io" target="_blank">Source Code</a>
-    </p>
-    <p class="footer-copy">Rotstein - MIT Licence 2024</p>
-</footer>
+    <div class="policy-footer">Rotstein - MIT Licence 2024</div>
+</main>
 
 </body>
 </html>

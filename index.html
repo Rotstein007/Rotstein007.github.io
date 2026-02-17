@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rotstein</title>
+    <meta name="description" content="Rotstein - Informatikstudent, Entwickler und Linux-Nutzer. Projekte, Skills und Kontakt auf einen Blick.">
+    <meta property="og:title" content="Rotstein">
+    <meta property="og:description" content="Informatikstudent, Entwickler und Linux-Nutzer. Projekte, Skills und Kontakt auf einen Blick.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/pfp.png">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="style.css">
 
@@ -17,53 +23,67 @@
 
 <div class="bg"></div>
 
+<div class="lang-switch" role="group" aria-label="Sprache">
+    <button type="button" class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
+</div>
+
 <header id="mobile-header" class="mobile-header">
     <span class="header-title">Rotstein</span>
 </header>
 
 <main class="landing">
+    <h1 class="sr-only">Rotstein</h1>
+    <nav class="sr-only" aria-label="Sektionen">
+        <a href="#about" data-i18n="nav.about">Über mich</a>
+        <a href="#experience" data-i18n="nav.experience">Erfahrung</a>
+        <a href="#projects" data-i18n="nav.projects">Projekte</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+        <a href="#socials" data-i18n="nav.socials">Socials</a>
+    </nav>
 
     <div class="profile-container-desktop">
         <div class="profile-visuals">
 
             <div class="nomark celement" id="celement1" style="--r: 0deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">Über Mich</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.about">Über Mich</span></div>
             </div>
 
             <div class="nomark celement" id="celement2" style="--r: 45deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">Erfahrung</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.experience">Erfahrung</span></div>
             </div>
 
             <div class="nomark celement" id="celement3" style="--r: 90deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">Projekte</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.projects">Projekte</span></div>
             </div>
 
             <div class="nomark celement" id="celement4" style="--r: 135deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">...</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.skills">Skills</span></div>
             </div>
 
-            <div class="nomark celement" id="celement5" style="--r: 180deg;">
+            <div class="nomark celement is-empty" id="celement5" style="--r: 180deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">Skills</span></div>
+                <div class="slice-content"><span class="slice-text"></span></div>
             </div>
 
-            <div class="nomark celement" id="celement6" style="--r: 225deg;">
+            <div class="nomark celement is-empty" id="celement6" style="--r: 225deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">...</span></div>
+                <div class="slice-content"><span class="slice-text"></span></div>
             </div>
 
             <div class="nomark celement" id="celement7" style="--r: 270deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">...</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.contact">Kontakt</span></div>
             </div>
 
             <div class="nomark celement" id="celement8" style="--r: 315deg;">
                 <img src="img/c_elem.svg" class="slice-bg" alt="Decoration">
-                <div class="slice-content"><span class="slice-text">Socials</span></div>
+                <div class="slice-content"><span class="slice-text" data-i18n="slice.socials">Socials</span></div>
             </div>
 
             <img src="img/pfp.png" alt="Rotstein Profile Picture" class="profile-picture nomark">
@@ -71,14 +91,14 @@
 
         <img src="img/empty.svg" usemap="#selection" class="overlay-map nomark" alt="Navigation Map">
         <map name="selection" class="nomark">
-            <area href="#about" alt="Über Mich" data-target="#about" coords="366,352,152,138,166,127,177,117,189,106,201,97,216,87,228,78,242,69,258,60,274,53,288,46,300,39,314,34,329,27,341,23,355,18,371,12,385,9,398,5,410,4,424,2,445,0,465,0,489,0,491,300,466,302,445,307,426,314,410,322,394,330,380,341" shape="poly">
-            <area href="#experience" alt="Erfahrung" data-target="#experience" coords="510,0,510,299,528,301,544,305,556,308,568,312,579,316,589,320,599,326,608,331,618,338,627,344,635,351,846,139,826,121,808,106,788,90,773,80,754,69,733,57,717,49,701,42,681,33,662,27,641,19,617,13,589,7,561,3,535,1" shape="poly">
-            <area href="#projects" alt="Projekte" data-target="#projects" coords="648,365,860,153,869,162,877,173,886,182,895,194,902,203,911,214,923,232,934,246,945,269,961,305,973,335,984,371,993,406,996,429,999,467,1000,490,700,491,698,473,695,457,691,441,685,425,678,409,669,394,659,380,654,373" shape="poly">
-            <area href="#portfolio" alt="Portfolio" data-target="#portfolio" coords="699,509,1000,511,1000,527,1000,542,997,556,996,568,995,581,991,593,989,606,986,619,982,633,979,647,974,661,970,674,965,686,959,699,953,711,946,725,939,739,931,752,923,767,914,781,906,794,895,807,884,820,874,831,860,845,648,634,658,621,667,609,676,595,682,583,688,570,692,555,695,541,699,523" shape="poly">
-            <area href="#skills" alt="Skills" data-target="#skills" coords="634,649,846,860,830,875,816,887,800,899,784,912,767,924,747,935,730,943,712,952,693,961,671,970,652,977,631,982,610,988,588,993,565,996,542,1000,511,1000,509,700,521,698,535,698,548,694,560,691,574,686,587,680,601,673,610,668,620,661" shape="poly">
-            <area href="#coding" alt="Coding" data-target="#coding" coords="364,648,373,655,383,663,392,670,403,675,413,680,426,686,438,689,449,694,461,696,472,698,482,698,491,700,489,998,475,998,461,998,445,996,431,995,417,993,405,991,390,988,376,984,360,981,345,975,329,970,314,965,299,959,284,952,269,943,254,936,244,929,231,922,217,913,203,903,191,894,180,885,168,876,154,862" shape="poly">
-            <area href="#contact" alt="Kontakt" data-target="#contact" coords="352,634,138,848,129,837,120,827,111,814,101,802,92,790,83,777,74,765,67,753,58,737,49,719,42,703,35,689,28,671,23,654,18,636,12,618,9,601,5,583,4,567,2,549,0,534,2,511,300,511,302,527,306,539,309,555,313,567,316,581,323,595,330,608,339,620" shape="poly">
-            <area href="#socials" alt="Socials" data-target="#socials" coords="300,489,0,489,0,472,2,454,4,438,5,422,7,408,11,394,14,378,19,362,23,346,27,332,34,316,39,302,44,292,51,277,58,263,65,253,72,239,81,224,90,212,99,201,106,191,113,180,122,171,129,163,140,152,353,366,343,376,336,387,327,398,322,408,316,419,313,429,307,443,304,458,302,473" shape="poly">
+            <area href="#about" alt="Über Mich" data-i18n-alt="slice.about" data-target="#about" coords="366,352,152,138,166,127,177,117,189,106,201,97,216,87,228,78,242,69,258,60,274,53,288,46,300,39,314,34,329,27,341,23,355,18,371,12,385,9,398,5,410,4,424,2,445,0,465,0,489,0,491,300,466,302,445,307,426,314,410,322,394,330,380,341" shape="poly">
+            <area href="#experience" alt="Erfahrung" data-i18n-alt="slice.experience" data-target="#experience" coords="510,0,510,299,528,301,544,305,556,308,568,312,579,316,589,320,599,326,608,331,618,338,627,344,635,351,846,139,826,121,808,106,788,90,773,80,754,69,733,57,717,49,701,42,681,33,662,27,641,19,617,13,589,7,561,3,535,1" shape="poly">
+            <area href="#projects" alt="Projekte" data-i18n-alt="slice.projects" data-target="#projects" coords="648,365,860,153,869,162,877,173,886,182,895,194,902,203,911,214,923,232,934,246,945,269,961,305,973,335,984,371,993,406,996,429,999,467,1000,490,700,491,698,473,695,457,691,441,685,425,678,409,669,394,659,380,654,373" shape="poly">
+            <area href="#" alt="" data-disabled="true" coords="699,509,1000,511,1000,527,1000,542,997,556,996,568,995,581,991,593,989,606,986,619,982,633,979,647,974,661,970,674,965,686,959,699,953,711,946,725,939,739,931,752,923,767,914,781,906,794,895,807,884,820,874,831,860,845,648,634,658,621,667,609,676,595,682,583,688,570,692,555,695,541,699,523" shape="poly">
+            <area href="#skills" alt="Skills" data-i18n-alt="slice.skills" data-target="#skills" coords="634,649,846,860,830,875,816,887,800,899,784,912,767,924,747,935,730,943,712,952,693,961,671,970,652,977,631,982,610,988,588,993,565,996,542,1000,511,1000,509,700,521,698,535,698,548,694,560,691,574,686,587,680,601,673,610,668,620,661" shape="poly">
+            <area href="#" alt="" data-disabled="true" coords="364,648,373,655,383,663,392,670,403,675,413,680,426,686,438,689,449,694,461,696,472,698,482,698,491,700,489,998,475,998,461,998,445,996,431,995,417,993,405,991,390,988,376,984,360,981,345,975,329,970,314,965,299,959,284,952,269,943,254,936,244,929,231,922,217,913,203,903,191,894,180,885,168,876,154,862" shape="poly">
+            <area href="#contact" alt="Kontakt" data-i18n-alt="nav.contact" data-target="#contact" coords="352,634,138,848,129,837,120,827,111,814,101,802,92,790,83,777,74,765,67,753,58,737,49,719,42,703,35,689,28,671,23,654,18,636,12,618,9,601,5,583,4,567,2,549,0,534,2,511,300,511,302,527,306,539,309,555,313,567,316,581,323,595,330,608,339,620" shape="poly">
+            <area href="#socials" alt="Socials" data-i18n-alt="slice.socials" data-target="#socials" coords="300,489,0,489,0,472,2,454,4,438,5,422,7,408,11,394,14,378,19,362,23,346,27,332,34,316,39,302,44,292,51,277,58,263,65,253,72,239,81,224,90,212,99,201,106,191,113,180,122,171,129,163,140,152,353,366,343,376,336,387,327,398,322,408,316,419,313,429,307,443,304,458,302,473" shape="poly">
         </map>
     </div>
 
@@ -94,28 +114,22 @@
 
         <nav class="mobile-links-list">
             <a href="#about" class="pro-btn">
-                <span><span class="btn-decor">&lt;</span>Über mich<span class="btn-decor">/&gt;</span></span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">&lt;</span><span data-i18n="nav.about">Über mich</span><span class="btn-decor">/&gt;</span></span><span class="btn-arrow">➜</span>
             </a>
             <a href="#experience" class="pro-btn">
-                <span><span class="btn-decor">[</span>Erfahrung<span class="btn-decor">]</span></span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">[</span><span data-i18n="nav.experience">Erfahrung</span><span class="btn-decor">]</span></span><span class="btn-arrow">➜</span>
             </a>
             <a href="#projects" class="pro-btn">
-                <span><span class="btn-decor">{</span>Projekte<span class="btn-decor">}</span></span><span class="btn-arrow">➜</span>
-            </a>
-            <a href="#portfolio" class="pro-btn">
-                <span><span class="btn-decor">#</span>...</span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">{</span><span data-i18n="nav.projects">Projekte</span><span class="btn-decor">}</span></span><span class="btn-arrow">➜</span>
             </a>
             <a href="#skills" class="pro-btn">
-                <span><span class="btn-decor">*</span>Skills</span><span class="btn-arrow">➜</span>
-            </a>
-            <a href="#coding" class="pro-btn">
-                <span><span class="btn-decor">/></span>...</span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">*</span><span data-i18n="nav.skills">Skills</span></span><span class="btn-arrow">➜</span>
             </a>
             <a href="#contact" class="pro-btn">
-                <span><span class="btn-decor">@</span>...</span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">@</span><span data-i18n="nav.contact">Kontakt</span></span><span class="btn-arrow">➜</span>
             </a>
             <a href="#socials" class="pro-btn">
-                <span><span class="btn-decor">~</span>Socials</span><span class="btn-arrow">➜</span>
+                <span><span class="btn-decor">~</span><span data-i18n="nav.socials">Socials</span></span><span class="btn-arrow">➜</span>
             </a>
         </nav>
     </div>
@@ -124,66 +138,63 @@
 <section class="content-section">
 
     <article id="about" class="content-block scroll-animate">
-        <img src="img/web.svg" alt="About" class="content-image nomark">
+        <img src="img/web.svg" alt="About" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>Über Mich</h2>
-            <p>Hey, ich bin Informatikstudent im 5. Semester. Ich begeistere mich schnell für neue Themen und liebe es, technische Herausforderungen in elegante Lösungen zu verwandeln.</p>
+            <h2 data-i18n="section.about.title">Über Mich</h2>
+            <p data-i18n-html="section.about.body">Hey, ich bin Rotstein, <span class="age">{age}</span> Jahre alt. Ich studiere Informatik im 5. Semester, begeistere mich leicht für neue Dinge und arbeite gern an technischen Herausforderungen. Außerdem bin ich offen und positiv gegenüber der Energiewende, technischen Neuerungen und KI.</p>
         </div>
     </article>
 
     <article id="experience" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Experience" class="content-image nomark">
+        <img src="img/placeholder.png" alt="Experience" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>Erfahrung</h2>
-            <p>Meine Praxiserfahrung stammt vor allem aus leidenschaftlichen Freizeitprojekten. Dabei habe ich mir verschiedenste Programmiersprachen und technische Lösungsansätze eigenständig angeeignet.</p>
+            <h2 data-i18n="section.experience.title">Erfahrung</h2>
+            <p data-i18n="section.experience.body">Meine Praxiserfahrung stammt vor allem aus eigenen Projekten. Dabei habe ich mir verschiedene Programmiersprachen und technische Lösungsansätze selbstständig angeeignet.</p>
         </div>
     </article>
 
     <article id="projects" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Projects" class="content-image nomark">
+        <img src="img/placeholder.png" alt="Projects" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>Projekte</h2>
-            <p>Auf GitHub findest du eine Auswahl meiner Projekte – manche entstanden spontan, andere durch lange Planung. Meist entwickle ich Softwarelösungen für Probleme, für die ich keine zufriedenstellenden existierenden Tools finden konnte.</p>
-        </div>
-    </article>
-
-    <article id="portfolio" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Portfolio" class="content-image nomark">
-        <div class="content-text">
-            <h2>...</h2>
-            <p>...</p>
+            <h2 data-i18n="section.projects.title">Projekte</h2>
+            <p data-i18n-html="section.projects.body">Auf <a href="https://github.com/rotstein007" target="_blank" rel="noopener" style="color: #fff; font-weight: bold; text-decoration: underline;">GitHub</a> findest du eine Auswahl meiner Projekte. Eines davon ist <a href="https://flathub.org/apps/dev.rotstein.SmashedPumpkin" target="_blank" rel="noopener" style="color: #fff; font-weight: bold; text-decoration: underline;">Smashed Pumpkin</a>, ein GNOME-Tool zum Installieren, Aktualisieren und Verwalten von PumpkinMC-Servern mit Instanzen, Logs sowie Worlds und Plugins.</p>
         </div>
     </article>
 
     <article id="skills" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Skills" class="content-image nomark">
+        <img src="img/placeholder.png" alt="Skills" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>Skills</h2>
-            <p>Im Studium habe ich Python, C++, JavaScript und PHP gelernt, mit einer Vertiefung in Java über zwei Module. Ich bin routiniert im Umgang mit Git sowie gängigen IDEs wie Visual Studio Code und der JetBrains-Suite. Zudem bin ich überzeugter Linux-Nutzer: Seit 2015 privat im Einsatz, habe ich 2019 Windows komplett den Rücken gekehrt.</p>
-        </div>
-    </article>
-
-    <article id="coding" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Coding" class="content-image nomark">
-        <div class="content-text">
-            <h2>...</h2>
-            <p>...</p>
+            <h2 data-i18n="section.skills.title">Skills</h2>
+            <p data-i18n="section.skills.body">Im Studium habe ich C++, JavaScript und PHP gelernt, mit einer Vertiefung in Java über zwei Module. Ich arbeite sicher mit Git und gängigen IDEs wie Visual Studio Code sowie der JetBrains-Suite. Außerdem nutze ich Linux seit 2015 privat und habe 2019 vollständig von Windows gewechselt.</p>
         </div>
     </article>
 
     <article id="contact" class="content-block scroll-animate">
-        <img src="img/placeholder.png" alt="Contact" class="content-image nomark">
+        <img src="img/placeholder.png" alt="Contact" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>...</h2>
-            <p>...</p>
+            <h2 data-i18n="section.contact.title">Kontakt</h2>
+            <p data-i18n="section.contact.body">Am besten erreichst du mich auf Discord unter rotstein_meister.</p>
         </div>
     </article>
 
     <article id="socials" class="content-block scroll-animate">
-        <img src="img/web.svg" alt="Socials" class="content-image nomark">
+        <img src="img/web.svg" alt="Socials" class="content-image nomark" loading="lazy" decoding="async">
         <div class="content-text">
-            <h2>Social media</h2>
-            <p>Ich betreibe einen <a href="https://www.youtube.com/@Rotstein" target="_blank" style="color: #fff; font-weight: bold; text-decoration: underline;">YouTube Kanal</a>, auf welchem ich ab und zu Tutorials zu unterschiedlichen Thematiken veröffentliche.</p>
+            <h2 data-i18n="section.socials.title">Soziale Medien</h2>
+            <div class="social-icons" aria-label="Social Links">
+                <a class="social-btn" href="https://github.com/rotstein007" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <button class="social-btn copy-btn" type="button" data-copy="rotstein_meister" aria-label="Discord" title="Discord">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+                </button>
+                <a class="social-btn" href="https://www.youtube.com/@rotstein_meister" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a class="social-btn" href="https://x.com/Rotstein11" target="_blank" rel="noopener" aria-label="X" title="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>
+                </a>
+            </div>
         </div>
     </article>
 
@@ -193,12 +204,12 @@
     <a class="github-logo nomark" href="https://www.youtube.com/@rotstein_meister" target="_blank">
         <img src="img/github.svg" alt="GitHub">
     </a>
-    <p class="footer-text">
-        <a class="repo-link" href="datenschutz-rotsteins-game-collection.html">Datenschutzerklärung – Rotsteins Game Collection</a>
-        &nbsp;·&nbsp;
-        <a class="repo-link" href="https://github.com/rotstein007/Rotstein007.github.io" target="_blank">Source Code</a>
-    </p>
-    <p class="footer-copy">Rotstein - MIT Licence 2024</p>
+    <nav class="footer-links" aria-label="Footer">
+        <a href="datenschutz-rotsteins-game-collection.html" data-i18n="footer.privacy">Datenschutz</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://github.com/rotstein007/Rotstein007.github.io" target="_blank" rel="noopener" data-i18n="footer.source">Source</a>
+    </nav>
+    <p class="footer-copy" data-i18n="footer.license">Rotstein - MIT Lizenz 2024</p>
 </footer>
 
 </body>

@@ -23,20 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollElements.forEach(el => scrollObserver.observe(el));
 
 
-    /* --- Sticky Header Logic --- */
-    const header = document.getElementById('mobile-header');
-    const introSection = document.querySelector('.landing');
-
-    if (header && introSection) {
-        window.addEventListener('scroll', () => {
-            // Show header when scrolled past 80% of the landing section
-            const triggerHeight = introSection.offsetHeight * 0.8;
-
-            if (window.scrollY > triggerHeight) {
-                header.classList.add('visible');
-            } else {
-                header.classList.remove('visible');
-            }
-        });
-    }
+    /* Sticky header removed by design */
 });

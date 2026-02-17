@@ -25,6 +25,7 @@
      */
     function onClick(area){
         const targetId = area.getAttribute("data-target");
+        if(!targetId) return;
         if(window.customScrollTo) {
             window.customScrollTo(targetId);
         } else {
