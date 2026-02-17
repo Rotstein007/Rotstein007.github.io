@@ -94,7 +94,7 @@ body::-webkit-scrollbar-thumb:hover { background: #ffcccc; }
 .nomark { user-select: none; -webkit-user-drag: none; }
 
 :root {
-    --circle-size: min(1000px, 92vmin);
+    --circle-size: min(1000px, 88vmin);
 }
 
 .bg {
@@ -428,7 +428,7 @@ area[data-disabled="true"] { cursor: default; pointer-events: none; }
    ========================================= */
 .mobile-nav, .mobile-header { display: none; }
 
-@media (aspect-ratio <= 1/1), (max-width: 1700px), (max-height: 960px) {
+@media (aspect-ratio <= 1/1), (max-width: 1700px), (max-height: 820px) {
     .profile-container-desktop { display: none !important; }
 
     .landing {
