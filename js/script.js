@@ -108,7 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "section.contact.title": "Kontakt",
             "section.contact.body": "Am besten erreichst du mich auf Discord unter rotstein_meister.",
             "section.socials.title": "Soziale Medien",
-            "footer.privacy": "Datenschutz",
+            "footer.privacyRgc": "Datenschutz RGC",
+            "footer.privacySmashedPumpkin": "Datenschutz Smashed Pumpkin",
             "footer.source": "Source",
             "footer.license": "Rotstein - MIT Lizenz 2024"
         },
@@ -136,7 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "section.contact.title": "Contact",
             "section.contact.body": "The best way to reach me is on Discord at rotstein_meister.",
             "section.socials.title": "Social media",
-            "footer.privacy": "Privacy Policy",
+            "footer.privacyRgc": "RGC Privacy Policy",
+            "footer.privacySmashedPumpkin": "Smashed Pumpkin Privacy Policy",
             "footer.source": "Source",
             "footer.license": "Rotstein - MIT License 2024"
         }
