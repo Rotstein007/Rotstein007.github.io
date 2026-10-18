@@ -21,7 +21,7 @@
 <body>
     <a class="skip-link" href="#content" data-i18n="skip">Zum Inhalt</a>
 
-    <div class="site-shell">
+    <div class="site-shell" id="start">
         <header class="site-header">
             <button class="language-toggle" id="language-toggle" type="button" lang="en" aria-label="I don't speak Bundesliga: switch to English" hidden>I don't speak Bundesliga</button>
             <span data-theme-control></span>
@@ -33,38 +33,40 @@
                     <h1 id="intro-title"><span data-i18n="intro.greeting">Hi, ich bin</span><br>Rotstein.</h1>
                     <p data-i18n="intro.body">Ich entwickle eigene Anwendungen für Linux und fürs Web. Meine Projekte findest du hier und auf GitHub.</p>
                     <div class="intro-actions">
-                        <a class="action action-primary" href="#projects" data-section="projects" data-i18n="intro.projects">Meine Projekte</a>
-                        <a class="action action-secondary" href="#contact" data-section="contact" data-i18n="nav.contact">Kontakt</a>
+                        <a class="action action-primary" href="#projects" data-i18n="intro.projects">Meine Projekte</a>
+                        <a class="action action-secondary" href="#contact" data-i18n="nav.contact">Kontakt</a>
                     </div>
                 </div>
 
-                <nav class="wheel" aria-label="Kreismenü" data-i18n-label="nav.label">
-                    <a class="wheel-segment" href="#about" data-section="about" style="--angle: 0deg">
-                        <span class="segment-label" data-i18n="nav.about">Über mich</span>
-                    </a>
-                    <a class="wheel-segment" href="#experience" data-section="experience" style="--angle: 45deg">
-                        <span class="segment-label" data-i18n="nav.experience">Erfahrung</span>
-                    </a>
-                    <a class="wheel-segment" href="#projects" data-section="projects" style="--angle: 90deg">
-                        <span class="segment-label" data-i18n="nav.projects">Projekte</span>
-                    </a>
-                    <a class="wheel-segment" href="#skills" data-section="skills" style="--angle: 135deg">
-                        <span class="segment-label" data-i18n="nav.skills">Skills</span>
-                    </a>
-                    <div class="wheel-segment is-empty" style="--angle: 180deg" aria-hidden="true"></div>
-                    <div class="wheel-segment is-empty" style="--angle: 225deg" aria-hidden="true"></div>
-                    <a class="wheel-segment" href="#contact" data-section="contact" style="--angle: 270deg">
-                        <span class="segment-label" data-i18n="nav.contact">Kontakt</span>
-                    </a>
-                    <a class="wheel-segment" href="#socials" data-section="socials" style="--angle: 315deg">
-                        <span class="segment-label" data-i18n="nav.socials">Socials</span>
-                    </a>
-                    <img class="wheel-avatar" src="assets/images/avatar.png" alt="Rotsteins Tiger-Avatar" data-i18n-alt="avatar.alt" width="360" height="360" draggable="false">
-                </nav>
+                <div class="wheel-frame">
+                    <nav class="wheel" aria-label="Kreismenü" data-i18n-label="nav.label">
+                        <a class="wheel-segment" href="#about" style="--angle: 0deg">
+                            <span class="segment-label" data-i18n="nav.about">Über mich</span>
+                        </a>
+                        <a class="wheel-segment" href="#experience" style="--angle: 45deg">
+                            <span class="segment-label" data-i18n="nav.experience">Erfahrung</span>
+                        </a>
+                        <a class="wheel-segment" href="#projects" style="--angle: 90deg">
+                            <span class="segment-label" data-i18n="nav.projects">Projekte</span>
+                        </a>
+                        <a class="wheel-segment" href="#skills" style="--angle: 135deg">
+                            <span class="segment-label" data-i18n="nav.skills">Skills</span>
+                        </a>
+                        <div class="wheel-segment is-empty" style="--angle: 180deg" aria-hidden="true"></div>
+                        <div class="wheel-segment is-empty" style="--angle: 225deg" aria-hidden="true"></div>
+                        <a class="wheel-segment" href="#contact" style="--angle: 270deg">
+                            <span class="segment-label" data-i18n="nav.contact">Kontakt</span>
+                        </a>
+                        <a class="wheel-segment" href="#socials" style="--angle: 315deg">
+                            <span class="segment-label" data-i18n="nav.socials">Socials</span>
+                        </a>
+                        <img class="wheel-avatar" src="assets/images/avatar.png" alt="Rotsteins Tiger-Avatar" data-i18n-alt="avatar.alt" width="360" height="360" draggable="false">
+                    </nav>
+                </div>
             </section>
 
-            <div class="content" id="content" aria-live="polite">
-                <section class="content-panel" id="projects" aria-labelledby="projects-title" data-panel>
+            <div class="content" id="content">
+                <section class="content-section" id="projects" aria-labelledby="projects-title" tabindex="-1">
                     <h2 id="projects-title" data-i18n="projects.title">Meine Projekte</h2>
                     <article class="project">
                         <img class="project-image" src="assets/images/smashed-pumpkin.png" alt="Smashed Pumpkin: Startansicht mit Serverliste" data-i18n-alt="projects.imageAlt" width="1010" height="670" decoding="async">
@@ -83,15 +85,14 @@
                     </article>
                 </section>
 
-                <section class="content-panel" id="about" aria-labelledby="about-title" data-panel>
+                <section class="content-section text-section" id="about" aria-labelledby="about-title" tabindex="-1">
                     <h2 id="about-title" data-i18n="nav.about">Über mich</h2>
                     <div class="text-copy">
-                        <p data-i18n="about.body">Ich beschäftige mich vor allem mit eigenen Softwareprojekten für Linux und das Web.</p>
                         <p data-i18n="about.linux">Linux nutze ich seit 2015. Seit 2019 ist es mein Hauptbetriebssystem.</p>
                     </div>
                 </section>
 
-                <section class="content-panel" id="experience" aria-labelledby="experience-title" data-panel>
+                <section class="content-section text-section" id="experience" aria-labelledby="experience-title" tabindex="-1">
                     <h2 id="experience-title" data-i18n="nav.experience">Erfahrung</h2>
                     <div class="text-copy">
                         <p data-i18n="experience.app">Mit Smashed Pumpkin habe ich eine native Linux-Anwendung entwickelt und über Flathub zugänglich gemacht.</p>
@@ -102,15 +103,14 @@
                     </div>
                 </section>
 
-                <section class="content-panel" id="skills" aria-labelledby="skills-title" data-panel>
+                <section class="content-section text-section" id="skills" aria-labelledby="skills-title" tabindex="-1">
                     <h2 id="skills-title" data-i18n="skills.title">Kenntnisse</h2>
                     <div class="text-copy">
                         <p data-i18n="skills.body">Ich entwickle Anwendungen für Linux und fürs Web. Dazu gehören die Bedienoberfläche, die Funktionen im Hintergrund und die Veröffentlichung.</p>
-                        <p data-i18n="skills.projects">Mit Smashed Pumpkin und der Kinoverwaltung kannst du dir zwei meiner Arbeiten ansehen.</p>
                     </div>
                 </section>
 
-                <section class="content-panel" id="contact" aria-labelledby="contact-title" data-panel>
+                <section class="content-section text-section" id="contact" aria-labelledby="contact-title" tabindex="-1">
                     <h2 id="contact-title" data-i18n="nav.contact">Kontakt</h2>
                     <div class="text-copy">
                         <p><span data-i18n="contact.body">Du erreichst mich auf Discord unter</span> <strong id="discord-name">rotstein_meister</strong>.</p>
@@ -119,7 +119,7 @@
                     </div>
                 </section>
 
-                <section class="content-panel" id="socials" aria-labelledby="socials-title" data-panel>
+                <section class="content-section text-section" id="socials" aria-labelledby="socials-title" tabindex="-1">
                     <h2 id="socials-title" data-i18n="socials.title">Links</h2>
                     <div class="link-row">
                         <a href="https://github.com/Rotstein007" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -131,7 +131,7 @@
         </main>
 
         <footer class="site-footer">
-            <a href="https://github.com/Rotstein007" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#start" data-i18n="footer.top">Nach oben</a>
             <nav aria-label="Datenschutzerklärungen" data-i18n-label="footer.label">
                 <a href="datenschutz-rotsteins-game-collection.html" data-i18n="footer.rgc">Datenschutz RGC</a>
                 <a href="datenschutz-smashed-pumpkin.html" data-i18n="footer.pumpkin">Datenschutz Smashed Pumpkin</a>

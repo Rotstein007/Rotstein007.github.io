@@ -1,6 +1,6 @@
 # Rotstein
 
-Persönliches Portfolio mit einem interaktiven Kreismenü. Die Webseite wird als statische Seite über GitHub Pages unter [rotstein.dev](https://rotstein.dev/) bereitgestellt.
+Persönliches Portfolio als Onepager mit einem interaktiven Kreismenü. Alle Abschnitte stehen auf einer durchgehend scrollbaren Seite. Der Kreis führt über direkte Ankerlinks zu den einzelnen Inhalten. Die Webseite wird als statische Seite über GitHub Pages unter [rotstein.dev](https://rotstein.dev/) bereitgestellt.
 
 ## Lokal ansehen
 
@@ -16,16 +16,16 @@ Anschließend [localhost:8000](http://localhost:8000/) öffnen.
 
 - `index.html`: Inhalte und zugängliche Navigation, auch ohne JavaScript lesbar.
 - `assets/css/site.css`: gemeinsame Gestaltung des Portfolios und der Datenschutzseiten.
-- `assets/js/site.js`: Kreisauswahl, direkte Abschnittslinks und Sprachwechsel.
+- `assets/js/site.js`: Sprachwechsel und Kopieren des Discord-Namens. Die Abschnittslinks funktionieren auch ohne JavaScript.
 - `assets/js/theme.js`: gemeinsamer Hell-/Dunkelmodus für Portfolio und Datenschutzseiten.
 - `assets/fonts/`: die verwendeten Ubuntu-Schriftschnitte.
 - `assets/images/`: Avatar, Kreissegment, Favicon und transparenter Projekt-Screenshot.
 - `datenschutz-*.html`: bestehende Datenschutzseiten mit unveränderten Adressen.
 - `.well-known/` und `CNAME`: Flathub-Verifikation und eigene Domain.
 
-Die Seite startet bei jedem Laden auf Deutsch. Der Button „I don't speak Bundesliga“ schaltet alle Portfolio-Inhalte ins Englische um. „Zurück auf Deutsch“ wechselt zurück. Die Sprache wird weder aus den Browsereinstellungen noch aus gespeicherten Präferenzen übernommen.
+Die Seite startet bei jedem Laden auf Deutsch. Der Button „I don't speak Bundesliga“ schaltet alle Portfolio-Inhalte ins Englische um. „Brezel und Lederhose“ wechselt zurück. Die Sprache wird weder aus den Browsereinstellungen noch aus gespeicherten Präferenzen übernommen.
 
-Der Hell-/Dunkelmodus wird dagegen lokal im Browser gespeichert. Standard ist das dunkle Studio-Design. Kreisbewegungen reagieren auf Auswahl und Hover und beachten die Einstellung für reduzierte Bewegung.
+Der Hell-/Dunkelmodus wird dagegen lokal im Browser gespeichert. Standard ist das dunkle Studio-Design. Das berührte oder fokussierte Kreissegment wird etwas größer und tritt nach außen. Es bleibt nach dem Aufruf eines Abschnitts keine Auswahl markiert. Die Bewegung beachtet die Einstellung für reduzierte Bewegung.
 
 Mineplay ist als gemeinsames Projekt mit Freunden kompakt unter dem vorgestellten Projekt verlinkt. Als persönlicher Kontakt wird ausschließlich Discord angeboten.
 
@@ -46,7 +46,7 @@ node --check assets/js/theme.js
 git diff --check
 ```
 
-Vor der Veröffentlichung Kreisauswahl, Tastaturbedienung und beide Sprachrichtungen auch bei schmalem Browserfenster prüfen. Beide Datenschutzadressen müssen direkt erreichbar bleiben.
+Vor der Veröffentlichung Ankerlinks im Kreis, direkte Abschnittsaufrufe, Tastaturbedienung und beide Sprachrichtungen auch bei schmalem Browserfenster prüfen. Beide Datenschutzadressen müssen direkt erreichbar bleiben.
 
 ## Lizenz
 

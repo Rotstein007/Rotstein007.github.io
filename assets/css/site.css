@@ -43,6 +43,8 @@
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     background: var(--background);
@@ -166,13 +168,21 @@ a:focus-visible, button:focus-visible {
     border: 0;
 }
 
+.wheel-frame {
+    justify-self: center;
+    width: min(calc(100% + 48px), 498px);
+    min-width: 0;
+    margin: -24px;
+    padding: 24px;
+    overflow: clip;
+}
+
 .wheel {
     position: relative;
-    justify-self: center;
     width: min(100%, 450px);
+    margin: 0 auto;
     aspect-ratio: 1;
     border-radius: 50%;
-    overflow: clip;
     isolation: isolate;
 }
 
@@ -183,7 +193,7 @@ a:focus-visible, button:focus-visible {
     height: 100%;
     background: var(--surface);
     color: var(--foreground);
-    transform: rotate(var(--angle)) scale(var(--segment-scale, 1));
+    transform: rotate(var(--angle)) translate(var(--segment-x, 0px), var(--segment-y, 0px)) scale(var(--segment-scale, 1));
     clip-path: polygon(50% 50%, 0 0, 50% 0);
     mask: url("../images/menu-segment.svg") center / 100% 100% no-repeat;
     transition: transform 220ms ease, background-color 160ms ease, color 160ms ease;
@@ -198,19 +208,24 @@ a:focus-visible, button:focus-visible {
     white-space: nowrap;
 }
 
-.wheel-segment[aria-current="location"], a.wheel-segment:hover, a.wheel-segment:focus-visible {
+a.wheel-segment:focus-visible, a.wheel-segment:active {
+    --segment-scale: 1.06;
+    --segment-x: -3px;
+    --segment-y: -7px;
     background: var(--selected);
     color: var(--selected-text);
     z-index: 1;
 }
 
-a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
-.wheel-segment[aria-current="location"] { animation: segment-select 300ms ease-out; }
-
-@keyframes segment-select {
-    0% { transform: rotate(var(--angle)) scale(1); }
-    50% { transform: rotate(var(--angle)) scale(1.065); }
-    100% { transform: rotate(var(--angle)) scale(var(--segment-scale, 1)); }
+@media (hover: hover) {
+    a.wheel-segment:hover {
+        --segment-scale: 1.06;
+        --segment-x: -3px;
+        --segment-y: -7px;
+        background: var(--selected);
+        color: var(--selected-text);
+        z-index: 1;
+    }
 }
 
 .wheel-segment:focus-visible .segment-label {
@@ -233,21 +248,35 @@ a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
 }
 
 .content {
-    min-height: 380px;
-    padding-top: 24px;
     border-top: 1px solid var(--border);
     scroll-margin-top: 24px;
 }
 
-.content-panel { scroll-margin-top: 24px; }
+.content-section {
+    padding: 48px 0;
+    scroll-margin-top: 24px;
+}
 
-.content:not(.is-interactive) .content-panel + .content-panel { margin-top: 48px; }
+.content-section:first-child { padding-top: 24px; }
+.content-section + .content-section { border-top: 1px solid var(--border); }
+.content-section:focus { outline: none; }
+.content-section:focus-visible h2 { color: var(--accent); }
 
-.content-panel h2 {
+.content-section h2 {
     margin-bottom: 26px;
     font-size: 26px;
     line-height: 1.3;
 }
+
+.text-section {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 40px;
+    align-items: baseline;
+}
+
+.text-section h2 { margin-bottom: 0; }
+.text-section > .link-row { align-self: start; margin-top: -7px; }
 
 .project {
     display: grid;
@@ -327,7 +356,6 @@ a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
 .site-footer {
     justify-content: space-between;
     gap: 12px;
-    margin-top: 36px;
     padding-top: 16px;
     border-top: 1px solid var(--border);
     font-size: 13px;
@@ -424,6 +452,7 @@ a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
 
     .intro h1 { font-size: clamp(38px, 8vw, 52px); }
     .intro p { max-width: 520px; }
+    .wheel-frame { max-width: 458px; }
     .wheel { max-width: 410px; }
     .segment-label { font-size: clamp(11px, 2.7vw, 13px); }
 
@@ -434,7 +463,8 @@ a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
 
     .collaboration { grid-template-columns: 1fr; gap: 8px; }
 
-    .content { min-height: 360px; }
+    .content-section { padding: 32px 0; }
+    .text-section { grid-template-columns: 1fr; gap: 18px; }
     .site-footer, .site-footer nav { align-items: flex-start; }
     .policy-section { padding: 20px; }
 }
@@ -444,5 +474,6 @@ a.wheel-segment:hover, a.wheel-segment:focus-visible { --segment-scale: 1.04; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .wheel-segment { transition: none; animation: none !important; }
+    html { scroll-behavior: auto; }
+    .wheel-segment { transition: none; }
 }
