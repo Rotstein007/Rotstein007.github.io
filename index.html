@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="dark">
+    <meta name="color-scheme" content="dark light">
     <title>Rotstein | Portfolio</title>
     <meta name="description" content="Eigene Anwendungen für Linux und das Web. Projekte und Kontakt von Rotstein." data-i18n-content="description">
     <meta property="og:title" content="Rotstein | Portfolio">
@@ -15,6 +15,7 @@
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/theme.js"></script>
     <script src="assets/js/site.js" defer></script>
 </head>
 <body>
@@ -23,6 +24,7 @@
     <div class="site-shell">
         <header class="site-header">
             <button class="language-toggle" id="language-toggle" type="button" lang="en" aria-label="I don't speak Bundesliga: switch to English" hidden>I don't speak Bundesliga</button>
+            <span data-theme-control></span>
         </header>
 
         <main>
@@ -75,6 +77,10 @@
                             </div>
                         </div>
                     </article>
+                    <article class="collaboration" aria-labelledby="mineplay-title">
+                        <h3 id="mineplay-title"><a href="https://mineplay.link/" target="_blank" rel="noopener noreferrer">Mineplay</a></h3>
+                        <p data-i18n="projects.mineplay">Bei Mineplay arbeite ich gemeinsam mit Freunden an kleinen Experimenten und größeren Projekten. Wir probieren neue Ideen aus und entwickeln sie gemeinsam weiter.</p>
+                    </article>
                 </section>
 
                 <section class="content-panel" id="about" aria-labelledby="about-title" data-panel>
@@ -107,11 +113,9 @@
                 <section class="content-panel" id="contact" aria-labelledby="contact-title" data-panel>
                     <h2 id="contact-title" data-i18n="nav.contact">Kontakt</h2>
                     <div class="text-copy">
-                        <p><span data-i18n="contact.body">Du erreichst mich per E-Mail oder auf Discord unter</span> <strong>rotstein_meister</strong>.</p>
-                        <div class="link-row">
-                            <a href="mailto:info@rotstein.dev">info@rotstein.dev</a>
-                            <a href="https://github.com/Rotstein007" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        </div>
+                        <p><span data-i18n="contact.body">Du erreichst mich auf Discord unter</span> <strong id="discord-name">rotstein_meister</strong>.</p>
+                        <button class="action action-secondary discord-copy" id="discord-copy" type="button" data-i18n="contact.copy" hidden>Discord-Namen kopieren</button>
+                        <p class="copy-status" id="copy-status" role="status"></p>
                     </div>
                 </section>
 

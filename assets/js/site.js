@@ -21,6 +21,7 @@
             "projects.body": "Pumpkin-Minecraft-Server installieren, aktualisieren und verwalten. Eine native Oberfläche im GNOME-Stil.",
             "projects.visit": "Projekt ansehen",
             "projects.source": "Quellcode",
+            "projects.mineplay": "Bei Mineplay arbeite ich gemeinsam mit Freunden an kleinen Experimenten und größeren Projekten. Wir probieren neue Ideen aus und entwickeln sie gemeinsam weiter.",
             "about.body": "Ich beschäftige mich vor allem mit eigenen Softwareprojekten für Linux und das Web.",
             "about.linux": "Linux nutze ich seit 2015. Seit 2019 ist es mein Hauptbetriebssystem.",
             "experience.app": "Mit Smashed Pumpkin habe ich eine native Linux-Anwendung entwickelt und über Flathub zugänglich gemacht.",
@@ -29,7 +30,10 @@
             "skills.title": "Kenntnisse",
             "skills.body": "Ich entwickle Anwendungen für Linux und fürs Web. Dazu gehören die Bedienoberfläche, die Funktionen im Hintergrund und die Veröffentlichung.",
             "skills.projects": "Mit Smashed Pumpkin und der Kinoverwaltung kannst du dir zwei meiner Arbeiten ansehen.",
-            "contact.body": "Du erreichst mich per E-Mail oder auf Discord unter",
+            "contact.body": "Du erreichst mich auf Discord unter",
+            "contact.copy": "Discord-Namen kopieren",
+            "contact.copied": "Name kopiert.",
+            "contact.copyFailed": "Bitte den Namen markieren und kopieren.",
             "socials.title": "Links",
             "footer.label": "Datenschutzerklärungen",
             "footer.rgc": "Datenschutz RGC",
@@ -54,6 +58,7 @@
             "projects.body": "Install, update and manage Pumpkin Minecraft servers through a native GNOME-style interface.",
             "projects.visit": "View project",
             "projects.source": "Source code",
+            "projects.mineplay": "At Mineplay, I work with friends on small experiments and larger projects. We try out new ideas and develop them together.",
             "about.body": "Most of my work goes into my own software projects for Linux and the web.",
             "about.linux": "I've used Linux since 2015. It has been my main operating system since 2019.",
             "experience.app": "With Smashed Pumpkin, I built a native Linux application and published it on Flathub.",
@@ -62,7 +67,10 @@
             "skills.title": "What I work on",
             "skills.body": "I develop applications for Linux and the web. My work includes the interface, the underlying functionality and publishing the application.",
             "skills.projects": "Smashed Pumpkin and my cinema management application are two examples of my work.",
-            "contact.body": "You can reach me by email or on Discord as",
+            "contact.body": "You can reach me on Discord as",
+            "contact.copy": "Copy Discord username",
+            "contact.copied": "Username copied.",
+            "contact.copyFailed": "Please select the username and copy it.",
             "socials.title": "Links",
             "footer.label": "Privacy policies",
             "footer.rgc": "RGC privacy policy",
@@ -73,6 +81,8 @@
     const panels = Array.from(document.querySelectorAll("[data-panel]"));
     const sectionLinks = Array.from(document.querySelectorAll("[data-section]"));
     const languageToggle = document.getElementById("language-toggle");
+    const discordCopy = document.getElementById("discord-copy");
+    const copyStatus = document.getElementById("copy-status");
     let language = "de";
 
     function selectSection(sectionId, updateHistory = false) {
@@ -125,6 +135,8 @@
             ? "I don't speak Bundesliga: switch to English"
             : "Zurück auf Deutsch");
         document.getElementById("social-locale").content = isGerman ? "de_DE" : "en_US";
+        copyStatus.textContent = "";
+        document.dispatchEvent(new Event("portfolio:languagechange"));
     }
 
     for (const link of sectionLinks) {
@@ -145,10 +157,19 @@
     window.addEventListener("popstate", selectFromHash);
     window.addEventListener("hashchange", selectFromHash);
     languageToggle.addEventListener("click", () => applyLanguage(language === "de" ? "en" : "de"));
+    discordCopy.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(document.getElementById("discord-name").textContent);
+            copyStatus.textContent = translations[language]["contact.copied"];
+        } catch {
+            copyStatus.textContent = translations[language]["contact.copyFailed"];
+        }
+    });
 
     // Every new page load starts in German, regardless of browser or saved preferences.
     applyLanguage("de");
     languageToggle.hidden = false;
+    discordCopy.hidden = false;
     document.getElementById("content").classList.add("is-interactive");
     selectSection("projects");
     selectFromHash();
