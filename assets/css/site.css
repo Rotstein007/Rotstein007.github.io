@@ -325,10 +325,6 @@ a.wheel-segment:focus-visible, a.wheel-segment:active {
 
 .text-copy { max-width: 700px; }
 
-.text-copy p + p { margin-top: 18px; }
-
-.text-copy .link-row { margin-top: 18px; }
-
 .link-row, .site-footer, .site-footer nav {
     display: flex;
     flex-wrap: wrap;
