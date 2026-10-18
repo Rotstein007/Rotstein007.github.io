@@ -19,7 +19,7 @@ Anschließend [localhost:8000](http://localhost:8000/) öffnen.
 - `assets/js/site.js`: Sprachwechsel und Kopieren des Discord-Namens. Die Abschnittslinks funktionieren auch ohne JavaScript.
 - `assets/js/theme.js`: gemeinsamer Hell-/Dunkelmodus für Portfolio und Datenschutzseiten.
 - `assets/fonts/`: die verwendeten Ubuntu-Schriftschnitte.
-- `assets/images/`: Avatar, Kreissegment, Favicon und transparenter Projekt-Screenshot.
+- `assets/images/`: Avatar, Kreissegment, Favicon, transparenter Projekt-Screenshot und Mineplay-Schriftzug.
 - `datenschutz-*.html`: bestehende Datenschutzseiten mit unveränderten Adressen.
 - `.well-known/` und `CNAME`: Flathub-Verifikation und eigene Domain.
 
@@ -28,6 +28,8 @@ Die Seite startet bei jedem Laden auf Deutsch. Der Button „I don't speak Bunde
 Der Hell-/Dunkelmodus wird dagegen lokal im Browser gespeichert. Standard ist das dunkle Studio-Design. Das berührte oder fokussierte Kreissegment wird etwas größer und tritt nach außen. Es bleibt nach dem Aufruf eines Abschnitts keine Auswahl markiert. Die Bewegung beachtet die Einstellung für reduzierte Bewegung.
 
 Mineplay ist als gemeinsames Projekt mit Freunden kompakt unter dem vorgestellten Projekt verlinkt. Als persönlicher Kontakt wird ausschließlich Discord angeboten.
+
+Die Mineplay-Grafik ist der [Original-Schriftzug](https://mineplay.link/img/mineplay_schrift4.png) aus dem Kopfbereich der Projektseite. Sie liegt lokal mit unverändertem Alphakanal vor.
 
 ## Inhalte pflegen
 

@@ -268,7 +268,7 @@ a.wheel-segment:focus-visible, a.wheel-segment:active {
     line-height: 1.3;
 }
 
-.text-section {
+.text-section, .collaboration {
     display: grid;
     grid-template-columns: 220px minmax(0, 1fr);
     gap: 40px;
@@ -306,19 +306,19 @@ a.wheel-segment:focus-visible, a.wheel-segment:active {
 .project-copy p { margin-bottom: 18px; }
 
 .collaboration {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 32px;
-    align-items: baseline;
+    align-items: center;
     margin-top: 32px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
 }
 
-.collaboration h3 { font-size: 22px; line-height: 1.3; }
-.collaboration h3 a { display: inline-block; margin-left: -8px; padding: 4px 8px; border-radius: 4px; }
-.collaboration h3 a:hover, .collaboration h3 a:focus-visible { background: var(--surface); }
-.collaboration p { color: var(--muted); line-height: 1.75; }
+.collaboration h3 a {
+    display: block;
+    max-width: 220px;
+}
+
+.collaboration-logo { display: block; width: 100%; height: auto; }
+.collaboration p { max-width: 700px; color: var(--muted); line-height: 1.75; }
 
 .discord-copy { margin-top: 20px; }
 .copy-status { min-height: 1.75em; margin-top: 12px; font-size: 14px; }
@@ -461,10 +461,8 @@ a.wheel-segment:focus-visible, a.wheel-segment:active {
         gap: 24px;
     }
 
-    .collaboration { grid-template-columns: 1fr; gap: 8px; }
-
     .content-section { padding: 32px 0; }
-    .text-section { grid-template-columns: 1fr; gap: 18px; }
+    .text-section, .collaboration { grid-template-columns: 1fr; gap: 18px; }
     .site-footer, .site-footer nav { align-items: flex-start; }
     .policy-section { padding: 20px; }
 }
